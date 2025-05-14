@@ -1,6 +1,7 @@
 # 📚💬 PDF Chat App
 
 ## Table of Contents
+
 - [Overview](#overview)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
@@ -40,32 +41,36 @@ PDF Chat App is an innovative AI-powered application that allows users to intera
 ## Installation
 
 1. Clone the repository:
+
    ```
    git clone https://github.com/dynamikapps/pdf-chat-app.git
    cd pdf-chat-app
    ```
 
 2. Create a virtual environment:
+
    ```
    python -m venv venv
    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
    ```
 
 3. Install the required packages:
+
    ```
    pip install -r requirements.txt
    ```
 
 4. Set up your environment variables:
-   - Create a `.env` file in the root directory
-   - Add your OpenAI API key:
+   - Copy `.env.example` to `.env`:
+     ```bash
+     cp .env.example .env
      ```
-     OPENAI_API_KEY=your_api_key_here
-     ```
+   - Edit `.env` and add your OpenAI API key
 
 ## Usage
 
 1. Run the Streamlit app:
+
    ```
    streamlit run main.py
    ```
@@ -104,7 +109,8 @@ pdf_chat_app/
 
 2. **User Query**: The user selects PDFs and asks a question through the chat interface.
 
-3. **AI Processing**: 
+3. **AI Processing**:
+
    - A CrewAI crew is created with two agents: a Researcher and a Writer.
    - The Researcher agent uses the PDFSearchTool to find relevant information in the selected PDFs.
    - The Writer agent formulates a clear and concise answer based on the Researcher's findings.
